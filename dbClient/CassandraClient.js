@@ -29,8 +29,19 @@ class CassandraClient {
 	async getData(format) {
 		switch (format) {
 			case writingFormats.JSON:
-				//this.prepareMockDataForWritingToJson()
 				await this.prepareDataForWritingToJson()
+				break;
+			default:
+				console.log('File format is not supported');
+		}
+
+		return this.data
+	}
+
+	async getMockData(format) {
+		switch (format) {
+			case writingFormats.JSON:
+				this.prepareMockDataForWritingToJson()
 				break;
 			default:
 				console.log('File format is not supported');
