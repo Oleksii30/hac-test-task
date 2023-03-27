@@ -1,6 +1,9 @@
-### To start project run
+### To setup project
 ```
 npm install
+```
+### To write db data into file
+```
 npm run start
 ```
 
