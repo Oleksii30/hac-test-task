@@ -1,0 +1,154 @@
+[
+    {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "users",
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "email": {
+                "type": "string"
+            },
+            "data": {
+                "type": "object",
+                "parameters": {
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "LastName": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "object",
+                        "parameters": {
+                            "days": {
+                                "type": "number"
+                            },
+                            "years": {
+                                "type": "number"
+                            }
+                        }
+                    },
+                    "hobbies": {
+                        "type": "array"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "promoters",
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "email": {
+                "type": "string"
+            },
+            "is_admin": {
+                "type": "boolean"
+            },
+            "name": {
+                "type": "string"
+            },
+            "phone": {
+                "type": "number"
+            }
+        }
+    },
+    {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "customers",
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "address": {
+                "type": "object",
+                "parameters": {
+                    "street": {
+                        "type": "object",
+                        "parameters": {
+                            "first": {
+                                "type": "string"
+                            },
+                            "second": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "zip": {
+                        "type": "number"
+                    },
+                    "postcodes": {
+                        "type": "set",
+                        "valueType": "string"
+                    },
+                    "phones": {
+                        "type": "object",
+                        "parameters": {
+                            "home": {
+                                "type": "string"
+                            },
+                            "mobile": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "email": {
+                "type": "string"
+            }
+        }
+    },
+    {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "title": "mushrooms",
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "family": {
+                "type": "set",
+                "valueType": {
+                    "customType": "mushroom",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "is_good": {
+                            "type": "boolean"
+                        },
+                        "key_features": {
+                            "type": "set",
+                            "valueType": "string"
+                        }
+                    }
+                }
+            },
+            "key_words": {
+                "type": "set",
+                "valueType": "string"
+            },
+            "story": {
+                "type": "map",
+                "valueTypes": [
+                    "number",
+                    "string"
+                ]
+            }
+        }
+    }
+]
